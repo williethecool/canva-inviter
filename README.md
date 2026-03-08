@@ -1,20 +1,18 @@
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/your-org/canva-invite-manager/main/assets/logo.svg" alt="Canva Invite Manager" width="80" height="80" />
-
 # Canva Invite Manager
 
 **A secure, serverless invitation code system for Canva Education classes — powered by Cloudflare Workers.**
 
 [![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![Cloudflare Workers](https://img.shields.io/badge/Cloudflare-Workers-F38020?logo=cloudflare&logoColor=white)](https://workers.cloudflare.com)
-[![Open Source](https://img.shields.io/badge/Open%20Source-%E2%9D%A4-red)](https://github.com/your-org/canva-invite-manager)
+[![Open Source](https://img.shields.io/badge/Open%20Source-%E2%9D%A4-red)](https://github.com/williethecool/canva-inviter)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
 [![Zero Dependencies](https://img.shields.io/badge/dependencies-zero-brightgreen)](package.json)
 
 Administrators generate cryptographically secure invitation codes and distribute them to students. Students redeem a code with their email address and are silently redirected server-side to the Canva class — the invite link is never exposed in source code or network responses.
 
-[**Live Demo**](https://your-worker.workers.dev) · [**Report a Bug**](https://github.com/your-org/canva-invite-manager/issues/new?template=bug_report.md) · [**Request a Feature**](https://github.com/your-org/canva-invite-manager/issues/new?template=feature_request.md)
+[**Report a Bug**](https://github.com/williethecool/canva-inviter/issues/new?template=bug_report.md) · [**Request a Feature**](https://github.com/williethecool/canva-inviter/issues/new?template=feature_request.md)
 
 </div>
 
