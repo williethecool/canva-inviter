@@ -63,7 +63,7 @@ For features on the [roadmap](README.md#roadmap), comment on the relevant issue 
 ### 1. Fork and clone
 
 ```bash
-git clone https://github.com/your-username/canva-inviter.git
+git clone https://github.com/williethecool/canva-inviter.git
 cd canva-inviter
 ```
 
