@@ -1,0 +1,40 @@
+# ============================================================
+#  Canva Invite Manager — Wrangler Configuration
+#  https://github.com/williethecool/canva-inviter
+# ============================================================
+#
+#  ⚠️  Do NOT add account_id here — Cloudflare injects it
+#      automatically during "Deploy to Cloudflare" one-click
+#      deployments and when using `wrangler login`.
+#
+#  🔒  NEVER put secret values in this file.
+#      Use `wrangler secret put <NAME>` for sensitive values,
+#      or configure them through the Cloudflare dashboard.
+# ============================================================
+
+name                = "canva-invite-manager"
+main                = "worker.js"
+compatibility_date  = "2024-09-23"
+
+# ── KV Namespace ─────────────────────────────────────────────
+# Cloudflare will auto-provision this namespace on one-click deploy.
+# The binding name INVITE_KV must match the variable name in worker.js exactly.
+[[kv_namespaces]]
+binding = "INVITE_KV"
+id      = ""          # Auto-populated by Cloudflare after provisioning
+
+# ── Environment Variables ─────────────────────────────────────
+# Non-secret defaults — override these in the dashboard or via secrets.
+# CANVA_INVITE_URL, ADMIN_PASSWORD, and SESSION_SECRET should be
+# set as encrypted secrets, not plain [vars]. They are listed here
+# so the Deploy to Cloudflare UI presents them to the deployer.
+[vars]
+ADMIN_USERNAME = "admin"
+
+# ── Secrets (configured at deploy time, never stored here) ───
+# These are presented as input fields during one-click deployment.
+# Values are encrypted and stored by Cloudflare — not in this file.
+#
+#   CANVA_INVITE_URL  — Your full Canva Education class invite link
+#   ADMIN_PASSWORD    — Admin panel password (use something strong)
+#   SESSION_SECRET    — 64-char random hex string (see README for generator)
