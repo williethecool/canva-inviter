@@ -1,0 +1,40 @@
+{
+  "name": "canva-invite-manager",
+  "version": "2.0.0",
+  "description": "Secure invitation code system for Canva Education classes — powered by Cloudflare Workers",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/williethecool/canva-inviter"
+  },
+  "scripts": {
+    "dev":    "wrangler dev --local",
+    "deploy": "wrangler deploy",
+    "tail":   "wrangler tail",
+    "secret:canva":   "wrangler secret put CANVA_INVITE_URL",
+    "secret:password": "wrangler secret put ADMIN_PASSWORD",
+    "secret:session": "wrangler secret put SESSION_SECRET"
+  },
+  "devDependencies": {
+    "wrangler": "^3.0.0"
+  },
+  "cloudflare": {
+    "bindings": {
+      "INVITE_KV": {
+        "description": "KV namespace used to store invitation codes, admin sessions, rate limit counters, and activity logs. Cloudflare will provision this automatically — no action required."
+      },
+      "CANVA_INVITE_URL": {
+        "description": "Your full Canva Education class invite link (e.g. `https://www.canva.com/brand/join?token=...`). This is stored as an encrypted secret and is **never** exposed to end users — it is only used server-side for the redirect."
+      },
+      "ADMIN_USERNAME": {
+        "description": "Username for the admin panel login page. Defaults to `admin` — change this to something less guessable for production deployments."
+      },
+      "ADMIN_PASSWORD": {
+        "description": "Password for the admin panel. Use a strong, unique password. This is stored as an encrypted secret by Cloudflare."
+      },
+      "SESSION_SECRET": {
+        "description": "A 64-character random hex string used to sign admin session cookies. Generate one by running this in your browser console: `Array.from(crypto.getRandomValues(new Uint8Array(32))).map(b => b.toString(16).padStart(2,'0')).join('')`"
+      }
+    }
+  }
+}
