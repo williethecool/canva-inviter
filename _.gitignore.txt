@@ -1,0 +1,17 @@
+# Local Wrangler dev environment — NEVER commit these
+.dev.vars
+.wrangler/
+
+# Node
+node_modules/
+npm-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
